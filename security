@@ -1,0 +1,15 @@
+# Security
+
+One-liners for security and permissions.
+
+## Commands
+
+| Description | Command |
+|-------------|---------|
+| Generate random password | `tr -dc 'A-Za-z0-9!@#$%' < /dev/urandom | head -c 16` |
+| Check sudo privileges | `sudo -l` |
+| List all users | `cat /etc/passwd | cut -d: -f1` |
+| List sudoers | `getent group sudo` |
+| Check file permissions | `ls -la /path/to/file` |
+| Show failed login attempts | `sudo grep "Failed password" /var/log/auth.log | tail -20` |
+| List firewall rules | `sudo iptables -L` |
