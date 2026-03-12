@@ -1,15 +1,60 @@
 # System
 
-One-liners for system information and management.
+One-liners for system-related tasks.
 
-## Commands
+---
 
-| Description | Command |
-|-------------|---------|
-| Get CPU usage | `top -bn1 | grep "Cpu(s)" | awk '{print $2}'` |
-| Get RAM usage | `free -h` |
-| Get uptime | `uptime -p` |
-| Get disk usage | `df -h` |
-| Get OS version | `cat /etc/os-release` |
-| Get installed RAM | `free -h | grep Mem | awk '{print $2}'` |
-| CPU info | `lscpu | grep "Model name"` |
+## Get system information
+```bash
+uname -a
+```
+
+## Get uptime
+```bash
+uptime -p
+```
+
+## Get disk usage
+```bash
+df -h
+```
+
+## Get folder size
+```bash
+du -sh /path/to/folder
+```
+
+## Get running services
+```bash
+systemctl list-units --type=service --state=running
+```
+
+## Get installed packages
+```bash
+dpkg -l | grep ^ii
+```
+
+## Get environment variables
+```bash
+printenv
+```
+
+## Get scheduled tasks
+```bash
+crontab -l
+```
+
+## Get CPU usage
+```bash
+top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}'
+```
+
+## Get memory usage
+```bash
+free -h
+```
+
+## Get OS version
+```bash
+cat /etc/os-release
+```
