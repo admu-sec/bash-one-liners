@@ -58,3 +58,12 @@ free -h
 ```bash
 cat /etc/os-release
 ```
+## Check systemd services that failed
+```bash
+systemctl --failed
+```
+
+## Show recent SSH auth log entries
+```bash
+sudo journalctl -u sshd --since "1 hour ago"
+```
