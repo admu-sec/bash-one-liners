@@ -63,3 +63,18 @@ ps aux | grep root
 ```bash
 systemctl status clamav-daemon
 ```
+
+## Check for world-writable files
+```bash
+find / -xdev -type f -perm -0002
+```
+
+## List SUID/SGID binaries (privilege escalation vectors)
+```bash
+find / -perm /6000 -type f 2>/dev/null
+```
+
+## Show listening ports with owning process
+```bash
+sudo ss -tulpn
+```
